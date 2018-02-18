@@ -6,7 +6,10 @@
 #
 # @example
 #   include request_tracker
-class request_tracker {
+class request_tracker (
+  String $version,
+  String $checksum
+) {
 
   contain request_tracker::install
 
