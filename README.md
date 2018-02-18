@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Tamerz/puppet-request_tracker.svg?branch=master)](https://travis-ci.org/Tamerz/puppet-request_tracker)
 
 # request_tracker
 
