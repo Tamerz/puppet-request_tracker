@@ -12,14 +12,14 @@ class request_tracker::install inherits request_tracker {
 
   package { $packages: }
 
-  archive { "/tmp/rt-${version}.tar.gz":
+  archive { "/tmp/rt-${request_tracker::version}.tar.gz":
     ensure        => present,
     extract       => true,
     extract_path  => '/tmp',
-    source        => "https://download.bestpractical.com/pub/rt/release/rt-${version}.tar.gz",
-    checksum      => $checksum,
+    source        => "https://download.bestpractical.com/pub/rt/release/rt-${request_tracker::version}.tar.gz",
+    checksum      => $request_tracker::checksum,
     checksum_type => 'sha256',
-    creates       => "/tmp/rt-${version}",
+    creates       => "/tmp/rt-${request_tracker::version}",
     cleanup       => true,
   }
 
