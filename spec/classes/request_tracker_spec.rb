@@ -27,6 +27,12 @@ describe 'request_tracker' do
           'cleanup'       => true,
         )
       }
+      it {
+        is_expected.to contain_exec('configure').with(
+          'command' => '/tmp/rt-4.4.2/configure --enable-graphviz --enable-gd --enable-externalauth',
+          'cwd'     => '/tmp/rt-4.4.2',
+        ).that_requires('Archive[/tmp/rt-4.4.2.tar.gz]')
+      }
     end
   end
 end

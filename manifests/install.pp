@@ -23,4 +23,10 @@ class request_tracker::install inherits request_tracker {
     cleanup       => true,
   }
 
+  exec { 'configure':
+    command => "/tmp/rt-${request_tracker::version}/configure --enable-graphviz --enable-gd --enable-externalauth",
+    cwd     => "/tmp/rt-${request_tracker::version}",
+    require => Archive["/tmp/rt-${request_tracker::version}.tar.gz"],
+  }
+
 }
