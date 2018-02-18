@@ -8,7 +8,7 @@
 #   include request_tracker::install
 class request_tracker::install inherits request_tracker {
 
-  $packages = ['gcc', 'httpd', 'git']
+  $packages = ['gcc', 'httpd', 'git', 'perl-cpan']
 
   package { $packages: }
 
