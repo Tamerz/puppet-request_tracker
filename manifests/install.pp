@@ -8,7 +8,9 @@
 #   include request_tracker::install
 class request_tracker::install inherits request_tracker {
 
-  package { 'gcc': }
+  $packages = ['gcc', 'httpd', 'git']
+
+  package { $packages: }
 
   archive { "/tmp/rt-${version}.tar.gz":
     ensure        => present,

@@ -13,6 +13,8 @@ describe 'request_tracker' do
 
       it { is_expected.to compile }
       it { is_expected.to contain_package('gcc') }
+      it { is_expected.to contain_package('httpd') }
+      it { is_expected.to contain_package('git') }
       it {
         is_expected.to contain_archive('/tmp/rt-4.4.2.tar.gz').with(
           'ensure'        => 'present',
